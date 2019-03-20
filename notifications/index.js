@@ -1,5 +1,6 @@
-require('dotenv').config();
 const mailer = require('nodemailer');
+
+require('dotenv').config();
 
 let notified = false;
 

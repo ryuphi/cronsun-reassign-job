@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const EventEmitter = require('events');
 const listeners = require('./notifications');
 
