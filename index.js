@@ -8,14 +8,17 @@ const api = require('./api');
   const jobsList = await api.getJobsList();
 
   damagedNodesUuid.every(async (id) => {
+    console.log(`\nFind jobs in Damaged node '${id}'`);
+
     // find jobs with the damaged node assigned..
     const damagedJobs = jobsList.filter(job => api.hasRuleInNode(job, id));
 
     if (damagedJobs.length <= 0) {
-      console.log('🍺🍺🍺 Don\'t have damaged nodes!!');
-      process.exit(0);
+      console.log(`🍺🍺🍺 Don\'t have damaged job in node '${id}'!!`);
+      return;
     }
-    // reassign jobs with the damaged node
-    damagedJobs.every(async job => await api.updateJobRule(job, firstAvailableNode.id))
+
+    damagedJobs.every(async job => await api.updateJobRule(job, firstAvailableNode.id));
+
   });
 })();
