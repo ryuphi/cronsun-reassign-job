@@ -1,0 +1,22 @@
+{
+  "name": "cronsun-reassign-job",
+  "version": "1.0.0",
+  "description": "Fixed problem of node damaged in k8s and reasign crons to new node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon node index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "cronsun"
+  ],
+  "author": "Marcos Corona <mcorona.avalos02@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
