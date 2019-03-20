@@ -1,8 +1,10 @@
 const axios = require('axios');
 
+require('dotenv').config();
+
 const options = {
   auth: {
-    username: process.env.USER,
+    username: process.env.USER_NAME,
     password: process.env.PASS
   },
   baseUrl: process.env.BASE_URL
