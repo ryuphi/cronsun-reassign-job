@@ -23,6 +23,22 @@ que tengan dentro de sus reglas de ejecución el nodo dañado y lo reemplazará 
 El script necesita que se especifiquen 3 variables de entorno. La manera más facil es pasar
 las variables al ejecutar el script
 
+## Usando con Docker
+
+Primero debemos hacer la build de la imagen y luego executar run!
+
+```bash
+docker build -t cronsun-reassign-job .
+docker run --env-file .env cronsun-reassign-job
+```
+
+o todo junto! :monkey:
+
+````bash
+docker build -t cronsun-reassign-job . && docker run --env-file .env cronsun-reassign-job
+````
+
+
 ```bash
 BASE_URL=http://cronsun.example.com USER=username PASS=pass npm start
 ```
