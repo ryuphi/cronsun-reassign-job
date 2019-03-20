@@ -10,8 +10,7 @@ const options = {
 
 const api = {
   hasRuleInNode: (job, nodeId) => {
-    const result =  job.rules.filter(rule => rule.nids.indexOf(nodeId) > 0);
-    return result.length > 0;
+    return job.rules.filter(rule => rule.nids.includes(nodeId)).length > 0;
   },
 
   getNodeList: async () => {
@@ -61,7 +60,7 @@ const api = {
           ...options
         }
       )
-      .then(response => console.log(`updated ${job.id}!`))
+      .then(response => console.log(`Updated job "${job.name}"!`))
       .catch(error => console.log(error))
   }
 }
