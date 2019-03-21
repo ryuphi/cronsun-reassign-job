@@ -1,5 +1,5 @@
 const EventEmitter = require('events');
-const listeners = require('./notifications');
+const notificaations = require('./notifications');
 
 const emitter = new EventEmitter();
 const api = require('./api');
@@ -7,7 +7,8 @@ const api = require('./api');
 const JOB_FOUND_EVENT = 'job-damaged-found';
 
 // email notification...
-emitter.addListener(JOB_FOUND_EVENT, listeners.emailNotification);
+emitter.addListener(JOB_FOUND_EVENT, notificaations.email);
+emitter.addListener(JOB_FOUND_EVENT, notificaations.mattermost);
 
 const main = async () => {
   const nodes = await api.getNodeList();
